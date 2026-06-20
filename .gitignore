@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local environments
+.venv/
+.venv-*/
+
+# macOS/editor
+.DS_Store
+
+# Generated corpora, checkpoints, evals, and logs
+archive/
+ckpt/
+eval/
+local_tail/
+logs/
+models/
+*.sqlite
+*.db
+*.jsonl
+*.tar
+*.wav
+*.flac
+*.mp3
+*.pth
+*.pt
+*.bin
+*.safetensors
+*.onnx
+
+# Private/local handoff and cloud-operation notes
+CLAUDE_*.md
+NEXT_SESSION.md
+LOCAL_EXTRA_WEEK.md
+LOCAL_WEEK_PLAN.md
+POD_RELAUNCH_PACK.md
+RUNPOD.md
+
+# Local/pod operation scripts with host-specific paths or endpoints.
+scripts/archive_pull.sh
+scripts/post_done.sh
+scripts/run_local_tail_acquire.sh
+scripts/local_scout_distill.py
+scripts/run_cpu_scout_5h.sh
+scripts/collapse_repro.py
+scripts/make_local_shards.py

@@ -1,0 +1,11 @@
+[project]
+name = "babel"
+version = "0.0.0"
+description = "Tiny spine for the Babel forgiving speech engine."
+requires-python = ">=3.11"
+
+[project.scripts]
+babel = "babel.cli:main"
+
+[tool.ruff]
+line-length = 100
