@@ -49,3 +49,9 @@ scripts/local_scout_distill.py
 scripts/run_cpu_scout_5h.sh
 scripts/collapse_repro.py
 scripts/make_local_shards.py
+
+# Private Mac Studio go-prompts and download logs (never publish)
+GO.md
+STUDIO_MAXIMIZATION_*.md
+scaffolding_*.log
+*.log
