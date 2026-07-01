@@ -34,7 +34,7 @@ models/
 *.onnx
 
 # Private/local handoff and cloud-operation notes
-CLAUDE_*.md
+AGENT_LOCAL_*.md
 NEXT_SESSION.md
 LOCAL_EXTRA_WEEK.md
 LOCAL_WEEK_PLAN.md
