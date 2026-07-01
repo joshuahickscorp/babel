@@ -35,7 +35,7 @@ WER (lower is better):
 
 These are the honest starting point. A distilled student that beats the tiny
 floor on worst-group WER does not exist yet; the current runs produce a
-non-converged smoke checkpoint, not a usable model. See ROADMAP.md.
+non-converged smoke checkpoint, not a usable model. See the Roadmap below.
 
 ## Run the tests
 
