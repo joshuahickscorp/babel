@@ -1,0 +1,100 @@
+{
+  "cards": [
+    {
+      "accent_family": "aave",
+      "examples": 1,
+      "failures": 0,
+      "path": "benchmark/QUALITY_CARDS/stage_b_repair/aave/wave1_repair_seed.md",
+      "worst_clean_wer": 0.25
+    },
+    {
+      "accent_family": "african",
+      "examples": 1,
+      "failures": 0,
+      "path": "benchmark/QUALITY_CARDS/stage_b_repair/african/wave1_repair_seed.md",
+      "worst_clean_wer": 0.0
+    },
+    {
+      "accent_family": "british_isles",
+      "examples": 1,
+      "failures": 1,
+      "path": "benchmark/QUALITY_CARDS/stage_b_repair/british_isles/wave1_repair_seed.md",
+      "worst_clean_wer": 0.875
+    },
+    {
+      "accent_family": "caribbean",
+      "examples": 1,
+      "failures": 0,
+      "path": "benchmark/QUALITY_CARDS/stage_b_repair/caribbean/wave1_repair_seed.md",
+      "worst_clean_wer": 0.0
+    },
+    {
+      "accent_family": "clean_us",
+      "examples": 1,
+      "failures": 0,
+      "path": "benchmark/QUALITY_CARDS/stage_b_repair/clean_us/wave1_repair_seed.md",
+      "worst_clean_wer": 0.0
+    },
+    {
+      "accent_family": "south_asian",
+      "examples": 1,
+      "failures": 0,
+      "path": "benchmark/QUALITY_CARDS/stage_b_repair/south_asian/wave1_repair_seed.md",
+      "worst_clean_wer": 0.14285714285714285
+    },
+    {
+      "accent_family": "us_southern",
+      "examples": 1,
+      "failures": 0,
+      "path": "benchmark/QUALITY_CARDS/stage_b_repair/us_southern/wave1_repair_seed.md",
+      "worst_clean_wer": 0.0
+    },
+    {
+      "accent_family": "us_spanish",
+      "examples": 1,
+      "failures": 0,
+      "path": "benchmark/QUALITY_CARDS/stage_b_repair/us_spanish/wave1_repair_seed.md",
+      "worst_clean_wer": 0.0
+    }
+  ],
+  "license_summary": "text-only synthetic/illustrative repair eval; no licensed audio",
+  "metrics": {
+    "by_accent_family": {
+      "aave": 0.25,
+      "african": 0.0,
+      "british_isles": 0.875,
+      "caribbean": 0.0,
+      "clean_us": 0.0,
+      "south_asian": 0.14285714285714285,
+      "us_southern": 0.0,
+      "us_spanish": 0.0
+    },
+    "clarify_precision": 1.0,
+    "clarify_recall": 0.5,
+    "clean_by_group": {
+      "aave": 0.25,
+      "african": 0.0,
+      "british_isles": 0.875,
+      "caribbean": 0.0,
+      "clean_us": 0.0,
+      "south_asian": 0.14285714285714285,
+      "us_southern": 0.0,
+      "us_spanish": 0.0
+    },
+    "clean_parity": {
+      "best": "us_spanish",
+      "gap": 0.875,
+      "worst": "british_isles"
+    },
+    "clean_wer": 0.225,
+    "decision_accuracy": 0.875,
+    "hallucination_rate": 0.125,
+    "parity_gap": 0.875,
+    "utterances": 8,
+    "worst_group_wer": 0.875
+  },
+  "model": "stage_b_repair_seed",
+  "release_decision": "not release eligible: synthetic seed only; clarify_recall 0.5; hallucination_rate 0.125",
+  "source_receipt": "benchmark/receipts/wave0_stage_b_repair_seed_2026_07_08.experiment.json",
+  "split": "synthetic repair seed; no held-out audio"
+}

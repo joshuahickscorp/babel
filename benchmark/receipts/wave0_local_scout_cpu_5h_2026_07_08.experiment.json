@@ -1,0 +1,63 @@
+{
+  "component": "acoustic_distillation_scout",
+  "created_at": "2026-07-08T08:05:00-04:00",
+  "data": "{\"commit\": \"510b24f6be095fc5c6dffcde7f764486c8ce5d7e\", \"exact_command\": \"THREADS=12 BATCH_SIZE=2 MAX_SECONDS=18000 MINI_SHARDS=1 EPOCHS=10 SAVE_EVERY=25 LOG_EVERY=5 LR=3e-6 ENCODER_LR=1e-6 EVAL_LIMIT=120 scripts/run_cpu_scout_5h.sh\", \"failure_example\": {\"accent_family\": \"ekpeye\", \"clip_id\": \"afrispeech-200-eval_cd0624a1a6971590\", \"hypothesis\": \"so, I'll cut blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood blood\", \"reference\": \"Stool OB+ golden liquid.\", \"wer\": 31.5}, \"license_summary\": {\"manifest\": \"benchmark/manifest.csv\", \"rows\": 353, \"summary\": \"AfriSpeech-200 eval; CC-BY-NC-SA-4.0; redistributable=no; metrics-only score-and-cite, not shipped audio.\"}, \"log\": \"logs/cpu_scout_5h.log\", \"per_group_table_key\": \"metrics_json.by_accent_family\", \"progress_json\": \"models/local_scout_cpu_5h/progress.json\", \"provenance_note\": \"Runner defaults are preserved in scripts/run_cpu_scout_5h.sh and logs/cpu_scout_5h.log.\", \"release_gate_decision\": {\"failures\": [\"average_wer regressed: 3.8376 > 0.468\", \"worst_group_wer regressed: 8.5625 > 0.9596\", \"parity_gap regressed: 7.8276 > 0.934\"], \"passed\": false}, \"split\": \"120 held-out eval rows; CPU scout eval limit\", \"workspace_dirty_at_recording\": true}",
+  "decision": "reject_for_release_gate_regression",
+  "experiment_id": "wave0_local_scout_cpu_5h_2026_07_08",
+  "hypothesis": "Local scout distillation can produce a checkpoint without earning a release claim unless worst-group WER and parity improve.",
+  "metrics_json": {
+    "average_wer": 3.8376,
+    "average_wer_lenient": 3.837,
+    "by_accent_family": {
+      "akan": 0.7349,
+      "ekpeye": 5.8601,
+      "english": 0.9596,
+      "fulani": 2.7881,
+      "igala": 6.8938,
+      "igbo": 7.0517,
+      "igbo and yoruba": 4.1827,
+      "ikwere": 2.9803,
+      "kanuri": 2.2846,
+      "luganda": 8.5625,
+      "swahili": 3.9048,
+      "yoruba": 3.5133,
+      "zulu": 1.1111
+    },
+    "by_accent_family_lenient": {
+      "akan": 0.7349,
+      "ekpeye": 5.8601,
+      "english": 0.9596,
+      "fulani": 2.7859,
+      "igala": 6.8938,
+      "igbo": 7.0517,
+      "igbo and yoruba": 4.1827,
+      "ikwere": 2.9788,
+      "kanuri": 2.2846,
+      "luganda": 8.5625,
+      "swahili": 3.9048,
+      "yoruba": 3.5133,
+      "zulu": 1.1111
+    },
+    "by_fluency_tier": {
+      "unknown": 3.8376
+    },
+    "by_noise_tier": {
+      "unknown": 3.8376
+    },
+    "device": "cpu",
+    "eval_utterances": 120,
+    "model": "models/local_scout_cpu_5h/stage_a_flagship",
+    "normalization_delta": 0.0006,
+    "parity_gap": 7.8276,
+    "release_gate_failures": [
+      "average_wer regressed: 3.8376 > 0.468",
+      "worst_group_wer regressed: 8.5625 > 0.9596",
+      "parity_gap regressed: 7.8276 > 0.934"
+    ],
+    "release_gate_passed": false,
+    "tag": "local_scout_cpu_5h",
+    "wall_seconds": 68.2,
+    "worst_group_wer": 8.5625
+  },
+  "notes": "Recorded as a non-converged/failing scout receipt; this is not a model improvement claim."
+}

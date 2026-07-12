@@ -1,0 +1,71 @@
+{
+  "checked": 8,
+  "failures": 0,
+  "passed": true,
+  "results": [
+    {
+      "component": "acoustic_distillation_scout",
+      "experiment_id": "wave0_local_scout_cpu_5h_2026_07_08",
+      "failures": [],
+      "passed": true,
+      "path": "benchmark/receipts/wave0_local_scout_cpu_5h_2026_07_08.experiment.json",
+      "scope": "model_evidence"
+    },
+    {
+      "component": "acoustic_distillation_scout",
+      "experiment_id": "wave0_scout_smoke_check_2026_07_08",
+      "failures": [],
+      "passed": true,
+      "path": "benchmark/receipts/wave0_scout_smoke_check_2026_07_08.experiment.json",
+      "scope": "model_evidence"
+    },
+    {
+      "component": "stage_b_repair",
+      "experiment_id": "wave0_stage_b_repair_seed_2026_07_08",
+      "failures": [],
+      "passed": true,
+      "path": "benchmark/receipts/wave0_stage_b_repair_seed_2026_07_08.experiment.json",
+      "scope": "model_evidence"
+    },
+    {
+      "component": "baseline",
+      "experiment_id": "wave0_tiny_baseline_2026_07_08",
+      "failures": [],
+      "passed": true,
+      "path": "benchmark/receipts/wave0_tiny_baseline_2026_07_08.experiment.json",
+      "scope": "reference"
+    },
+    {
+      "component": "baseline",
+      "experiment_id": "wave0_turbo_baseline_2026_07_08",
+      "failures": [],
+      "passed": true,
+      "path": "benchmark/receipts/wave0_turbo_baseline_2026_07_08.experiment.json",
+      "scope": "reference"
+    },
+    {
+      "component": "stage_a5_nbest_contract",
+      "experiment_id": "wave1_nbest_contract_seed_2026_07_08",
+      "failures": [],
+      "passed": true,
+      "path": "benchmark/receipts/wave1_nbest_contract_seed_2026_07_08.experiment.json",
+      "scope": "contract_evidence"
+    },
+    {
+      "component": "acoustic_distillation_scout",
+      "experiment_id": "wave1_run_cycle_local_scout_cpu_5h_2026_07_08",
+      "failures": [],
+      "passed": true,
+      "path": "benchmark/receipts/wave1_run_cycle_local_scout_cpu_5h_2026_07_08.experiment.json",
+      "scope": "model_evidence"
+    },
+    {
+      "component": "segmentation_contract",
+      "experiment_id": "wave1_segmentation_contract_seed_2026_07_08",
+      "failures": [],
+      "passed": true,
+      "path": "benchmark/receipts/wave1_segmentation_contract_seed_2026_07_08.experiment.json",
+      "scope": "contract_evidence"
+    }
+  ]
+}

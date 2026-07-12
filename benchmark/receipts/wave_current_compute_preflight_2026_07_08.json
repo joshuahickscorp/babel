@@ -1,0 +1,106 @@
+{
+  "audit_failures": [],
+  "blockers": [],
+  "checks": {
+    "audit_gate": true,
+    "defect_gate": true,
+    "disk_gate": true,
+    "experiment_receipt_gate": true,
+    "known_phase_checks_gate": true,
+    "license_gate": true,
+    "phase_0_contract_loop": true,
+    "phase_1_eval_seed": true,
+    "phase_1_repair_gate": true,
+    "phase_2_data_gate": true,
+    "required_receipts_gate": true,
+    "runpod_ready": true,
+    "split_gate": true
+  },
+  "component": "acoustic_distillation",
+  "disk": {
+    "free_gb": 60.216,
+    "min_free_gb": 60.0,
+    "workspace": "/Users/scammermike/Downloads/babel"
+  },
+  "passed": true,
+  "phase_status": {
+    "defect_gate": true,
+    "license_gate": true,
+    "phase_0_contract_loop": true,
+    "phase_1_eval_seed": true,
+    "phase_1_repair_gate": true,
+    "phase_2_data_gate": true,
+    "runpod_ready": true,
+    "split_gate": true
+  },
+  "required_receipts": [
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave1_run_cycle_local_scout_cpu_5h_2026_07_08.experiment.json",
+      "size_bytes": 3599
+    },
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave1_worst_cell_plan_2026_07_08.json",
+      "size_bytes": 4008
+    },
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave1_stage_b_repair_quality_cards_2026_07_08.json",
+      "size_bytes": 2917
+    },
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave_current_receipt_validation_2026_07_08.json",
+      "size_bytes": 2340
+    },
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave2_studio_distillation_plan_2026_07_08.json",
+      "size_bytes": 12607
+    },
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave3_group_dro_schedule_2026_07_08.json",
+      "size_bytes": 6217
+    },
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave4_acquisition_plan_2026_07_08.json",
+      "size_bytes": 11711
+    },
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave5_acquisition_intake_gate_2026_07_08.json",
+      "size_bytes": 1346
+    },
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave6_benchmark_freeze_2026_07_08.json",
+      "size_bytes": 2532
+    },
+    {
+      "exists": true,
+      "path": "benchmark/receipts/wave7_launch_readiness_scorecard_2026_07_08.md",
+      "size_bytes": 4318
+    },
+    {
+      "exists": true,
+      "path": "benchmark/QUALITY_CARDS/luganda/wave1_local_scout_cpu_5h.md",
+      "size_bytes": 2215
+    },
+    {
+      "exists": true,
+      "path": "benchmark/QUALITY_CARDS/stage_b_repair/british_isles/wave1_repair_seed.md",
+      "size_bytes": 1066
+    }
+  ],
+  "stats": {
+    "clips": 1146353,
+    "coverage_cells": 195,
+    "coverage_entropy": 0.06020428741277462,
+    "eval_clips": 18433,
+    "experiments": 8,
+    "train_hours": 1786.9097277777776
+  }
+}

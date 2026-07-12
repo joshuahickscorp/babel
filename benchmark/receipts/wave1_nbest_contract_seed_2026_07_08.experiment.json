@@ -1,0 +1,38 @@
+{
+  "component": "stage_a5_nbest_contract",
+  "data": "{\"commit\": \"510b24f6be095fc5c6dffcde7f764486c8ce5d7e\", \"exact_command\": \".venv/bin/babel eval-nbest eval/nbest_eval.jsonl\", \"failure_example\": {\"accent_family\": \"east_asian\", \"clip_id\": \"nbest_fixture_0005\", \"hypothesis\": \"she have three brother\", \"reference\": \"she has three brothers\", \"wer\": 0.5}, \"license_summary\": {\"summary\": \"text-only synthetic fixture; no licensed audio; not release evidence\"}, \"per_group_table_key\": \"metrics_json.by_accent_family\", \"release_gate_decision\": {\"failures\": [\"previous metrics not provided\"], \"passed\": false}, \"split\": \"eval/nbest_eval.jsonl text fixture contract seed\", \"workspace_dirty_at_recording\": true}",
+  "decision": "record_as_contract_evidence",
+  "experiment_id": "wave1_nbest_contract_seed_2026_07_08",
+  "hypothesis": "First-best N-best errors must be measured by worst-group WER, while oracle WER quantifies recoverable repair headroom without claiming acoustic improvement.",
+  "metrics_json": {
+    "average_wer": 0.2413793103448276,
+    "by_accent_family": {
+      "african": 0.4,
+      "caribbean": 0.25,
+      "clean_us": 0.0,
+      "east_asian": 0.5,
+      "south_asian": 0.14285714285714285,
+      "us_spanish": 0.2
+    },
+    "first_best_wer": 0.2413793103448276,
+    "metric_scope": "first_best_nbest_contract_seed",
+    "oracle_by_accent_family": {
+      "african": 0.0,
+      "caribbean": 0.0,
+      "clean_us": 0.0,
+      "east_asian": 0.0,
+      "south_asian": 0.0,
+      "us_spanish": 0.0
+    },
+    "oracle_wer": 0.0,
+    "parity_gap": 0.5,
+    "recoverable_gap": 0.2413793103448276,
+    "release_gate_failures": [
+      "previous metrics not provided"
+    ],
+    "release_gate_passed": false,
+    "utterances": 6,
+    "worst_group_wer": 0.5
+  },
+  "notes": "Contract evidence only: first-best WER is scoreable, oracle gap is repair headroom, and this is not a release candidate."
+}

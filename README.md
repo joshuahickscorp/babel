@@ -11,8 +11,9 @@ baselines (below).
 
 ## What is here
 
-- `src/babel/`: the core library, a SQLite experiment ledger, from-scratch
-  WER / CER and worst-group-parity metrics, release gates, and the CLI.
+- `src/babel/`: the library modules, a SQLite experiment ledger, WER / CER and
+  worst-group-parity metrics, release gates, local eval/error-report commands,
+  local-tail audit utilities, and the CLI.
 - `scripts/distill.py`: a Whisper knowledge-distillation harness (KL + CE loss,
   decoder-layer pruning, and a token-diversity collapse guard).
 - `benchmark/`: the worst-group-WER benchmark, with governance, a data
@@ -53,13 +54,18 @@ it easy to see exactly where accent-robust ASR breaks.
 
 Babel today is an evaluation harness and a worst-group-WER benchmark. The work
 ahead is to train the model the benchmark is built to judge. The heavy training
-runs on an Apple M2 Max Mac Studio (96 GB), which brings every stage in-house.
+runs on the target Apple Silicon Studio profile from the July 2026 audit: M1
+Ultra, 128 GB unified memory, 8 TB SSD.
 
 ### Now (works today)
 - The experiment ledger, the from-scratch WER / CER and worst-group-parity
   metrics, the release gates, and the worst-group benchmark.
 - A Whisper distillation harness that runs without collapsing (KL + CE,
   decoder pruning, collapse guard).
+- CLI-owned held-out scoring and baseline error reports via `babel local-eval`
+  and `babel error-report`; legacy scripts are compatibility entry points.
+- CLI-owned local-tail prep and CPU-safe data audits via `babel
+  prepare-tail-shards` and `babel tail-audit`; legacy scripts remain shims.
 - Reference baselines for the teacher and the un-distilled tiny floor.
 
 ### Next

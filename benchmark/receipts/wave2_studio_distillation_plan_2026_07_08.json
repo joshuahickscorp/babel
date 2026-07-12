@@ -1,0 +1,197 @@
+{
+  "blockers": [
+    "host_profile_is_not_target_studio"
+  ],
+  "decision": "do_not_launch_full_distillation_on_this_host",
+  "governing_metric": "worst-group WER and min-max parity gap",
+  "group_dro": {
+    "blockers": [
+      "group_dro_sampler_and_loss_receipts_not_implemented",
+      "run tiny train-to-score first and record worst-group WER before parity optimization",
+      "licensed training audio missing for selected worst cells"
+    ],
+    "required_receipt_fields": [
+      "sampler weights by accent_family",
+      "per-group loss table",
+      "per-group WER table",
+      "collapse guard readings",
+      "exact command",
+      "failure example from the worst group"
+    ],
+    "status": "blocked"
+  },
+  "host_profile": "pre_studio_m3_pro_18gb",
+  "input_evidence": {
+    "baseline_parity_gap": 7.8276,
+    "baseline_worst_group_wer": 8.5625,
+    "ledger_stats": {
+      "clips": 1146353,
+      "coverage_cells": 195,
+      "coverage_entropy": 0.06020428741277462,
+      "eval_clips": 18433,
+      "experiments": 8,
+      "train_hours": 1786.9097277777776
+    },
+    "license_summary": {
+      "licenses": [
+        "CC-BY-NC-SA-4.0"
+      ],
+      "manifest": "benchmark/manifest.csv",
+      "redistributable_values": [
+        "no"
+      ],
+      "rows": 353,
+      "sources": [
+        "afrispeech-200"
+      ],
+      "summary": "353 manifest rows; licenses=['CC-BY-NC-SA-4.0']; redistributable=['no']; score-and-cite only when redistributable includes 'no'"
+    },
+    "preflight_passed": true,
+    "preflight_receipt": "benchmark/receipts/wave1_compute_preflight_2026_07_08.json",
+    "previous_parity_gap": 0.934,
+    "previous_worst_group_wer": 0.9596,
+    "worst_cell_plan_receipt": "benchmark/receipts/wave1_worst_cell_plan_2026_07_08.json"
+  },
+  "launch_authorized_on_this_host": false,
+  "plan_id": "wave2_studio_distillation_plan_2026_07_08",
+  "release_expectation": {
+    "reason": "selected worst cells have no ledgered training hours",
+    "status": "non_release_expected"
+  },
+  "selected_worst_cells": [
+    {
+      "accent_family": "luganda",
+      "eval_clips": 44,
+      "eval_gap": 0,
+      "gap_hours": 10.0,
+      "group_metric": 8.5625,
+      "priority": 17.125,
+      "rank": 1,
+      "recommended_action": "acquire_or_license_training_audio",
+      "target_eval_clips": 10,
+      "target_hours": 10.0,
+      "train_clips": 0,
+      "train_hours": 0.0
+    },
+    {
+      "accent_family": "igbo",
+      "eval_clips": 355,
+      "eval_gap": 0,
+      "gap_hours": 10.0,
+      "group_metric": 7.0517,
+      "priority": 14.1034,
+      "rank": 2,
+      "recommended_action": "acquire_or_license_training_audio",
+      "target_eval_clips": 10,
+      "target_hours": 10.0,
+      "train_clips": 0,
+      "train_hours": 0.0
+    },
+    {
+      "accent_family": "igala",
+      "eval_clips": 12,
+      "eval_gap": 0,
+      "gap_hours": 10.0,
+      "group_metric": 6.8938,
+      "priority": 13.7876,
+      "rank": 3,
+      "recommended_action": "acquire_or_license_training_audio",
+      "target_eval_clips": 10,
+      "target_hours": 10.0,
+      "train_clips": 0,
+      "train_hours": 0.0
+    },
+    {
+      "accent_family": "ekpeye",
+      "eval_clips": 80,
+      "eval_gap": 0,
+      "gap_hours": 10.0,
+      "group_metric": 5.8601,
+      "priority": 11.7202,
+      "rank": 4,
+      "recommended_action": "acquire_or_license_training_audio",
+      "target_eval_clips": 10,
+      "target_hours": 10.0,
+      "train_clips": 0,
+      "train_hours": 0.0
+    }
+  ],
+  "target_profile": "mac_studio_m1_ultra_128gb",
+  "tiny_train_to_score": {
+    "commands": [
+      {
+        "eval_command": ".venv/bin/python scripts/local_eval.py --model models/studio_tiny_full_seed_13/stage_a_flagship --tag studio_tiny_full_seed_13 --device mps --limit 0",
+        "quality_cards_command": ".venv/bin/babel quality-cards eval/baseline/studio_tiny_full_seed_13.held_out.jsonl --metrics-json eval/baseline/studio_tiny_full_seed_13.metrics.json --manifest-csv benchmark/manifest.csv --output-dir benchmark/QUALITY_CARDS --model-name studio_tiny_full_seed_13 --release-decision-json benchmark/receipts/studio_tiny_full_seed_13_2026_07_08.experiment.json --receipt-path benchmark/receipts/studio_tiny_full_seed_13_2026_07_08.experiment.json --card-id studio_tiny_full_seed_13",
+        "required_outputs": [
+          "eval/baseline/studio_tiny_full_seed_13.metrics.json",
+          "eval/baseline/studio_tiny_full_seed_13.held_out.jsonl",
+          "benchmark/receipts/studio_tiny_full_seed_13_2026_07_08.experiment.json"
+        ],
+        "run_cycle_command": ".venv/bin/babel run-cycle archive/ledger.sqlite eval/baseline/studio_tiny_full_seed_13.metrics.json --experiment-id studio_tiny_full_seed_13_2026_07_08 --exact-command 'SEED=13 PYTHONHASHSEED=13 .venv/bin/python scripts/local_scout_distill.py --device mps --teacher openai/whisper-large-v3-turbo --student openai/whisper-tiny --mini-shards 0 --epochs 3 --batch-size 4 --lr 3e-06 --encoder-lr 1e-06 --save-every 100 --log-every 10 --max-seconds 0 --ckpt models/studio_tiny_full_seed_13; .venv/bin/python scripts/local_eval.py --model models/studio_tiny_full_seed_13/stage_a_flagship --tag studio_tiny_full_seed_13 --device mps --limit 0' --component acoustic_distillation_studio --hypothesis 'Studio tiny seed 13 must improve worst-group WER or be recorded as non-release evidence.' --split 'full held-out eval; score-and-cite benchmark manifest' --license-summary '353 manifest rows; licenses=[CC-BY-NC-SA-4.0]; redistributable=[no]; score-and-cite only when redistributable includes no' --previous-json eval/baseline/tiny_baseline.metrics.json --heldout-jsonl eval/baseline/studio_tiny_full_seed_13.held_out.jsonl --output-receipt benchmark/receipts/studio_tiny_full_seed_13_2026_07_08.experiment.json --decision reject_unless_release_gate_passes",
+        "seed": 13,
+        "tag": "studio_tiny_full_seed_13",
+        "train_command": "SEED=13 PYTHONHASHSEED=13 .venv/bin/python scripts/local_scout_distill.py --device mps --teacher openai/whisper-large-v3-turbo --student openai/whisper-tiny --mini-shards 0 --epochs 3 --batch-size 4 --lr 3e-06 --encoder-lr 1e-06 --save-every 100 --log-every 10 --max-seconds 0 --ckpt models/studio_tiny_full_seed_13"
+      },
+      {
+        "eval_command": ".venv/bin/python scripts/local_eval.py --model models/studio_tiny_full_seed_29/stage_a_flagship --tag studio_tiny_full_seed_29 --device mps --limit 0",
+        "quality_cards_command": ".venv/bin/babel quality-cards eval/baseline/studio_tiny_full_seed_29.held_out.jsonl --metrics-json eval/baseline/studio_tiny_full_seed_29.metrics.json --manifest-csv benchmark/manifest.csv --output-dir benchmark/QUALITY_CARDS --model-name studio_tiny_full_seed_29 --release-decision-json benchmark/receipts/studio_tiny_full_seed_29_2026_07_08.experiment.json --receipt-path benchmark/receipts/studio_tiny_full_seed_29_2026_07_08.experiment.json --card-id studio_tiny_full_seed_29",
+        "required_outputs": [
+          "eval/baseline/studio_tiny_full_seed_29.metrics.json",
+          "eval/baseline/studio_tiny_full_seed_29.held_out.jsonl",
+          "benchmark/receipts/studio_tiny_full_seed_29_2026_07_08.experiment.json"
+        ],
+        "run_cycle_command": ".venv/bin/babel run-cycle archive/ledger.sqlite eval/baseline/studio_tiny_full_seed_29.metrics.json --experiment-id studio_tiny_full_seed_29_2026_07_08 --exact-command 'SEED=29 PYTHONHASHSEED=29 .venv/bin/python scripts/local_scout_distill.py --device mps --teacher openai/whisper-large-v3-turbo --student openai/whisper-tiny --mini-shards 0 --epochs 3 --batch-size 4 --lr 3e-06 --encoder-lr 1e-06 --save-every 100 --log-every 10 --max-seconds 0 --ckpt models/studio_tiny_full_seed_29; .venv/bin/python scripts/local_eval.py --model models/studio_tiny_full_seed_29/stage_a_flagship --tag studio_tiny_full_seed_29 --device mps --limit 0' --component acoustic_distillation_studio --hypothesis 'Studio tiny seed 29 must improve worst-group WER or be recorded as non-release evidence.' --split 'full held-out eval; score-and-cite benchmark manifest' --license-summary '353 manifest rows; licenses=[CC-BY-NC-SA-4.0]; redistributable=[no]; score-and-cite only when redistributable includes no' --previous-json eval/baseline/tiny_baseline.metrics.json --heldout-jsonl eval/baseline/studio_tiny_full_seed_29.held_out.jsonl --output-receipt benchmark/receipts/studio_tiny_full_seed_29_2026_07_08.experiment.json --decision reject_unless_release_gate_passes",
+        "seed": 29,
+        "tag": "studio_tiny_full_seed_29",
+        "train_command": "SEED=29 PYTHONHASHSEED=29 .venv/bin/python scripts/local_scout_distill.py --device mps --teacher openai/whisper-large-v3-turbo --student openai/whisper-tiny --mini-shards 0 --epochs 3 --batch-size 4 --lr 3e-06 --encoder-lr 1e-06 --save-every 100 --log-every 10 --max-seconds 0 --ckpt models/studio_tiny_full_seed_29"
+      },
+      {
+        "eval_command": ".venv/bin/python scripts/local_eval.py --model models/studio_tiny_full_seed_47/stage_a_flagship --tag studio_tiny_full_seed_47 --device mps --limit 0",
+        "quality_cards_command": ".venv/bin/babel quality-cards eval/baseline/studio_tiny_full_seed_47.held_out.jsonl --metrics-json eval/baseline/studio_tiny_full_seed_47.metrics.json --manifest-csv benchmark/manifest.csv --output-dir benchmark/QUALITY_CARDS --model-name studio_tiny_full_seed_47 --release-decision-json benchmark/receipts/studio_tiny_full_seed_47_2026_07_08.experiment.json --receipt-path benchmark/receipts/studio_tiny_full_seed_47_2026_07_08.experiment.json --card-id studio_tiny_full_seed_47",
+        "required_outputs": [
+          "eval/baseline/studio_tiny_full_seed_47.metrics.json",
+          "eval/baseline/studio_tiny_full_seed_47.held_out.jsonl",
+          "benchmark/receipts/studio_tiny_full_seed_47_2026_07_08.experiment.json"
+        ],
+        "run_cycle_command": ".venv/bin/babel run-cycle archive/ledger.sqlite eval/baseline/studio_tiny_full_seed_47.metrics.json --experiment-id studio_tiny_full_seed_47_2026_07_08 --exact-command 'SEED=47 PYTHONHASHSEED=47 .venv/bin/python scripts/local_scout_distill.py --device mps --teacher openai/whisper-large-v3-turbo --student openai/whisper-tiny --mini-shards 0 --epochs 3 --batch-size 4 --lr 3e-06 --encoder-lr 1e-06 --save-every 100 --log-every 10 --max-seconds 0 --ckpt models/studio_tiny_full_seed_47; .venv/bin/python scripts/local_eval.py --model models/studio_tiny_full_seed_47/stage_a_flagship --tag studio_tiny_full_seed_47 --device mps --limit 0' --component acoustic_distillation_studio --hypothesis 'Studio tiny seed 47 must improve worst-group WER or be recorded as non-release evidence.' --split 'full held-out eval; score-and-cite benchmark manifest' --license-summary '353 manifest rows; licenses=[CC-BY-NC-SA-4.0]; redistributable=[no]; score-and-cite only when redistributable includes no' --previous-json eval/baseline/tiny_baseline.metrics.json --heldout-jsonl eval/baseline/studio_tiny_full_seed_47.held_out.jsonl --output-receipt benchmark/receipts/studio_tiny_full_seed_47_2026_07_08.experiment.json --decision reject_unless_release_gate_passes",
+        "seed": 47,
+        "tag": "studio_tiny_full_seed_47",
+        "train_command": "SEED=47 PYTHONHASHSEED=47 .venv/bin/python scripts/local_scout_distill.py --device mps --teacher openai/whisper-large-v3-turbo --student openai/whisper-tiny --mini-shards 0 --epochs 3 --batch-size 4 --lr 3e-06 --encoder-lr 1e-06 --save-every 100 --log-every 10 --max-seconds 0 --ckpt models/studio_tiny_full_seed_47"
+      }
+    ],
+    "post_run_gates": [
+      "validate-receipts must pass",
+      "worst_group_wer must not regress against previous baseline",
+      "parity_gap must not regress against previous baseline",
+      "quality cards must exist for every scored accent family",
+      "babel_loses_here.md must add or preserve failure rows"
+    ],
+    "status": "studio_only"
+  },
+  "zero_hour_worst_cells": [
+    {
+      "accent_family": "luganda",
+      "group_metric": 8.5625,
+      "recommended_action": "acquire_or_license_training_audio",
+      "train_hours": 0.0
+    },
+    {
+      "accent_family": "igbo",
+      "group_metric": 7.0517,
+      "recommended_action": "acquire_or_license_training_audio",
+      "train_hours": 0.0
+    },
+    {
+      "accent_family": "igala",
+      "group_metric": 6.8938,
+      "recommended_action": "acquire_or_license_training_audio",
+      "train_hours": 0.0
+    },
+    {
+      "accent_family": "ekpeye",
+      "group_metric": 5.8601,
+      "recommended_action": "acquire_or_license_training_audio",
+      "train_hours": 0.0
+    }
+  ]
+}

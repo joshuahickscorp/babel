@@ -1,0 +1,47 @@
+{
+  "component": "acoustic_distillation_scout",
+  "created_at": "2026-07-08T08:05:00-04:00",
+  "data": "{\"commit\": \"510b24f6be095fc5c6dffcde7f764486c8ce5d7e\", \"exact_command\": \".venv/bin/python scripts/local_scout_distill.py --device mps --teacher openai/whisper-large-v3-turbo --student openai/whisper-tiny --mini-shards 1 --epochs 1 --batch-size 1 --ckpt models/local_scout_tiny_turbo_kd && .venv/bin/python scripts/local_eval.py --model models/local_scout_tiny_turbo_kd/stage_a_flagship --tag scout_smoke_check --device mps --limit 20\", \"failure_example\": {\"accent_family\": \"swahili\", \"clip_id\": \"afrispeech-200-eval_1108d50988402600\", \"hypothesis\": \"The T-Tarii Adenomas Adenomas have the most common P-Tarii T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T\", \"reference\": \"Pituitary Adenomas Adenomas are the most common pituitary tumours.\", \"wer\": 6.6667}, \"license_summary\": {\"manifest\": \"benchmark/manifest.csv\", \"rows\": 353, \"summary\": \"AfriSpeech-200 eval; CC-BY-NC-SA-4.0; redistributable=no; metrics-only score-and-cite, not shipped audio.\"}, \"log\": \"logs/phase_c_scout.log\", \"per_group_table_key\": \"metrics_json.by_accent_family\", \"progress_json\": \"models/local_scout_tiny_turbo_kd/progress.json\", \"provenance_note\": \"Historical log shows collapse guard abort at step 100; command reconstructed from log and current script interface because original shell line was not preserved.\", \"release_gate_decision\": {\"failures\": [\"average_wer regressed: 0.9431 > 0.5633\", \"worst_group_wer regressed: 1.5556 > 1.0442\", \"parity_gap regressed: 1.2431 > 0.638\"], \"passed\": false}, \"split\": \"20 held-out eval rows; smoke subset only\", \"workspace_dirty_at_recording\": true}",
+  "decision": "reject_for_release_gate_regression",
+  "experiment_id": "wave0_scout_smoke_check_2026_07_08",
+  "hypothesis": "Local scout distillation can produce a checkpoint without earning a release claim unless worst-group WER and parity improve.",
+  "metrics_json": {
+    "average_wer": 0.9431,
+    "average_wer_lenient": 0.9158,
+    "by_accent_family": {
+      "igbo": 0.5017,
+      "luganda": 0.3125,
+      "swahili": 1.1654,
+      "yoruba": 1.0071,
+      "zulu": 1.5556
+    },
+    "by_accent_family_lenient": {
+      "igbo": 0.5017,
+      "luganda": 0.3125,
+      "swahili": 1.1107,
+      "yoruba": 1.0071,
+      "zulu": 1.5556
+    },
+    "by_fluency_tier": {
+      "unknown": 0.9431
+    },
+    "by_noise_tier": {
+      "unknown": 0.9431
+    },
+    "device": "mps",
+    "eval_utterances": 20,
+    "model": "models/local_scout_tiny_turbo_kd/stage_a_flagship",
+    "normalization_delta": 0.0274,
+    "parity_gap": 1.2431,
+    "release_gate_failures": [
+      "average_wer regressed: 0.9431 > 0.5633",
+      "worst_group_wer regressed: 1.5556 > 1.0442",
+      "parity_gap regressed: 1.2431 > 0.638"
+    ],
+    "release_gate_passed": false,
+    "tag": "scout_smoke_check",
+    "wall_seconds": 4.8,
+    "worst_group_wer": 1.5556
+  },
+  "notes": "Recorded as a non-converged/failing scout receipt; this is not a model improvement claim."
+}

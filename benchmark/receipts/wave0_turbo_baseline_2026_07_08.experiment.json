@@ -1,0 +1,46 @@
+{
+  "component": "baseline",
+  "created_at": "2026-07-08T08:00:00-04:00",
+  "data": "{\"commit\": \"510b24f6be095fc5c6dffcde7f764486c8ce5d7e\", \"exact_command\": \".venv/bin/python scripts/local_eval.py --model openai/whisper-large-v3-turbo --tag turbo_baseline --device mps\", \"failure_example\": {\"accent_family\": \"mixed\", \"clip_id\": \"commonvoice-en-eval_eeb264770eb255c1\", \"hypothesis\": \"They're going to pick up a school, Kyl, and we're going to Singapore.\", \"reference\": \"The participating schools came from around Singapore.\", \"wer\": 1.7143}, \"license_summary\": {\"manifest\": \"benchmark/manifest.csv\", \"rows\": 353, \"summary\": \"AfriSpeech-200 eval; CC-BY-NC-SA-4.0; redistributable=no; metrics-only score-and-cite, not shipped audio.\"}, \"per_group_table_key\": \"metrics_json.by_accent_family\", \"release_gate_decision\": \"baseline context only; not a Babel model release claim\", \"split\": \"held_out eval; 353-row benchmark manifest\", \"workspace_dirty_at_recording\": true}",
+  "decision": "record_as_reference_only",
+  "experiment_id": "wave0_turbo_baseline_2026_07_08",
+  "hypothesis": "openai/whisper-large-v3-turbo establishes a scored reference row for worst-group WER governance.",
+  "metrics_json": {
+    "average_wer": 0.2211,
+    "by_accent_family": {
+      "England English": 0.0,
+      "India and South Asia (India, Pakistan, Sri Lanka)": 0.1481,
+      "United States English": 0.2,
+      "United States English,England English": 0.05,
+      "akan": 0.3476,
+      "ekpeye": 0.5102,
+      "english": 0.8788,
+      "fulani": 0.3547,
+      "igala": 0.3517,
+      "igbo": 0.2392,
+      "igbo and yoruba": 0.4187,
+      "ikwere": 0.2384,
+      "kanuri": 0.2643,
+      "luganda": 0.1875,
+      "mixed": 0.1528,
+      "swahili": 0.2053,
+      "yoruba": 0.3154,
+      "zulu": 0.6667
+    },
+    "by_fluency_tier": {
+      "unknown": 0.2211
+    },
+    "by_noise_tier": {
+      "unknown": 0.2211
+    },
+    "device": "mps",
+    "eval_utterances": 353,
+    "model": "openai/whisper-large-v3-turbo",
+    "parity_gap": 0.8788,
+    "release_gate_passed": null,
+    "tag": "turbo_baseline",
+    "wall_seconds": 530.7,
+    "worst_group_wer": 0.8788
+  },
+  "notes": "Reference baseline receipt; average WER is not the governing metric."
+}

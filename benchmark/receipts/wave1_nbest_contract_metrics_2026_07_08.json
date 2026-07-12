@@ -1,0 +1,26 @@
+{
+  "average_wer": 0.2413793103448276,
+  "by_accent_family": {
+    "african": 0.4,
+    "caribbean": 0.25,
+    "clean_us": 0.0,
+    "east_asian": 0.5,
+    "south_asian": 0.14285714285714285,
+    "us_spanish": 0.2
+  },
+  "first_best_wer": 0.2413793103448276,
+  "metric_scope": "first_best_nbest_contract_seed",
+  "oracle_by_accent_family": {
+    "african": 0.0,
+    "caribbean": 0.0,
+    "clean_us": 0.0,
+    "east_asian": 0.0,
+    "south_asian": 0.0,
+    "us_spanish": 0.0
+  },
+  "oracle_wer": 0.0,
+  "parity_gap": 0.5,
+  "recoverable_gap": 0.2413793103448276,
+  "utterances": 6,
+  "worst_group_wer": 0.5
+}

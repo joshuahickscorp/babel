@@ -1,0 +1,84 @@
+{
+  "accent_family_counts": {
+    "England English": 3,
+    "India and South Asia (India, Pakistan, Sri Lanka)": 3,
+    "United States English": 5,
+    "United States English,England English": 2,
+    "akan": 6,
+    "ekpeye": 25,
+    "english": 1,
+    "fulani": 12,
+    "igala": 4,
+    "igbo": 4,
+    "igbo and yoruba": 12,
+    "ikwere": 29,
+    "kanuri": 4,
+    "luganda": 2,
+    "mixed": 212,
+    "swahili": 10,
+    "yoruba": 18,
+    "zulu": 1
+  },
+  "constraints": [
+    "headline metric is worst_group_wer; min-max parity gap is the paired gate",
+    "average WER is a no-regress guard only",
+    "manifest clip_sha256 values are do-not-train hashes",
+    "AfriSpeech-200 rows are score-and-cite only and not redistributable",
+    "R3 model scoring path is implemented; scored rows still require exact command, model hash, and device"
+  ],
+  "failures": [],
+  "governance": {
+    "path": "benchmark/GOVERNANCE.md",
+    "sha256": "61f6fad33727495bd1f2bca343a6186f9af78ff7083769224e92ca1f8ace4b84"
+  },
+  "governing_metric": "worst-group WER and min-max parity gap",
+  "label_review_groups": [
+    "India and South Asia (India, Pakistan, Sri Lanka)",
+    "United States English,England English",
+    "igbo and yoruba"
+  ],
+  "loss_ledger": {
+    "path": "benchmark/babel_loses_here.md",
+    "sha256": "0b6a46fdb8cba5dccc2fc4fe3eabc72f2520b296d8a0482ad3674a7fc7b7165b"
+  },
+  "low_n_groups": {
+    "England English": 3,
+    "India and South Asia (India, Pakistan, Sri Lanka)": 3,
+    "United States English": 5,
+    "United States English,England English": 2,
+    "english": 1,
+    "igala": 4,
+    "igbo": 4,
+    "kanuri": 4,
+    "luganda": 2,
+    "zulu": 1
+  },
+  "manifest": {
+    "do_not_train_hash_list_sha256": "959b8fd9ee3a86444f0518bca7fb6de5e7f88c68e05314fb99a2aaea2700aac0",
+    "do_not_train_hashes": 353,
+    "license_counts": {
+      "CC-BY-NC-SA-4.0": 353
+    },
+    "path": "benchmark/manifest.csv",
+    "redistributable_counts": {
+      "no": 353
+    },
+    "rows": 353,
+    "sha256": "3e634c9358db4ed1aa490663cab1a3829d2e2df57a314cf2d21fab7941c8c862",
+    "source_counts": {
+      "afrispeech-200": 353
+    },
+    "split_counts": {
+      "eval": 353
+    }
+  },
+  "passed": true,
+  "receipt_id": "wave6_benchmark_freeze_2026_07_08",
+  "scorer": {
+    "path": "benchmark/score.py",
+    "r3_inference_backend_status": "implemented",
+    "scorer_version": "0.2.0-model-backend",
+    "sha256": "a908905a03aae253a5ae0823e3d98ef59abe3d6063ea9a2353303e6fbbbe14d2"
+  },
+  "status": "frozen_with_score_and_cite_constraints"
+}

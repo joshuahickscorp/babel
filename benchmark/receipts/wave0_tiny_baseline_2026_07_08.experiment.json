@@ -1,0 +1,68 @@
+{
+  "component": "baseline",
+  "created_at": "2026-07-08T08:00:00-04:00",
+  "data": "{\"commit\": \"510b24f6be095fc5c6dffcde7f764486c8ce5d7e\", \"exact_command\": \".venv/bin/python scripts/local_eval.py --model openai/whisper-tiny --tag tiny_baseline --device mps\", \"failure_example\": {\"accent_family\": \"fulani\", \"clip_id\": \"afrispeech-200-eval_f60b9c38c2b7880c\", \"hypothesis\": \"This last few weeks have been difficult for anybody who was already living on the margins of society. Dash has selected due to mental health issues. How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it? How is it?\", \"reference\": \"These last few weeks have been difficult for anybody who was already living on the margins of society - isolated due to mental health issues, housing insecurity, or those experiencing homelessness, BACS CEO Jamie Almanza said in a statement.\\n\", \"wer\": 2.0789}, \"license_summary\": {\"manifest\": \"benchmark/manifest.csv\", \"rows\": 353, \"summary\": \"AfriSpeech-200 eval; CC-BY-NC-SA-4.0; redistributable=no; metrics-only score-and-cite, not shipped audio.\"}, \"per_group_table_key\": \"metrics_json.by_accent_family\", \"release_gate_decision\": \"baseline context only; not a Babel model release claim\", \"split\": \"held_out eval; 353-row benchmark manifest\", \"workspace_dirty_at_recording\": true}",
+  "decision": "record_as_reference_only",
+  "experiment_id": "wave0_tiny_baseline_2026_07_08",
+  "hypothesis": "openai/whisper-tiny establishes a scored reference row for worst-group WER governance.",
+  "metrics_json": {
+    "average_wer": 0.468,
+    "average_wer_lenient": 0.4622,
+    "by_accent_family": {
+      "England English": 0.0256,
+      "India and South Asia (India, Pakistan, Sri Lanka)": 0.6835,
+      "United States English": 0.0353,
+      "United States English,England English": 0.1,
+      "akan": 0.5544,
+      "ekpeye": 0.8672,
+      "english": 0.9596,
+      "fulani": 0.8428,
+      "igala": 0.8976,
+      "igbo": 0.508,
+      "igbo and yoruba": 0.7458,
+      "ikwere": 0.5276,
+      "kanuri": 0.8028,
+      "luganda": 0.4062,
+      "mixed": 0.3533,
+      "swahili": 0.4511,
+      "yoruba": 0.6957,
+      "zulu": 0.7778
+    },
+    "by_accent_family_lenient": {
+      "England English": 0.0256,
+      "India and South Asia (India, Pakistan, Sri Lanka)": 0.6835,
+      "United States English": 0.0353,
+      "United States English,England English": 0.1,
+      "akan": 0.5266,
+      "ekpeye": 0.8637,
+      "english": 0.9596,
+      "fulani": 0.8079,
+      "igala": 0.8976,
+      "igbo": 0.508,
+      "igbo and yoruba": 0.7343,
+      "ikwere": 0.5148,
+      "kanuri": 0.8028,
+      "luganda": 0.4062,
+      "mixed": 0.3533,
+      "swahili": 0.3681,
+      "yoruba": 0.6938,
+      "zulu": 0.7778
+    },
+    "by_fluency_tier": {
+      "unknown": 0.468
+    },
+    "by_noise_tier": {
+      "unknown": 0.468
+    },
+    "device": "mps",
+    "eval_utterances": 353,
+    "model": "openai/whisper-tiny",
+    "normalization_delta": 0.0058,
+    "parity_gap": 0.934,
+    "release_gate_passed": null,
+    "tag": "tiny_baseline",
+    "wall_seconds": 74.5,
+    "worst_group_wer": 0.9596
+  },
+  "notes": "Reference baseline receipt; average WER is not the governing metric."
+}

@@ -1,0 +1,367 @@
+{
+  "allowed_sources": [
+    {
+      "license_requirement": "CC-BY or CC-BY-SA only; reject withdrawn deposit 4836",
+      "source": "EdACC current deposits 10283/8983",
+      "use": "redistributable public-audio benchmark rows and licensed training backfill"
+    },
+    {
+      "license_requirement": "record canonical license text and attribution before ledger-upsert",
+      "source": "SLR70",
+      "use": "licensed training/eval backfill when accent labels are defensible"
+    },
+    {
+      "license_requirement": "record canonical license text and attribution before ledger-upsert",
+      "source": "speechocean762",
+      "use": "licensed training/eval backfill when accent labels are defensible"
+    }
+  ],
+  "blocked_sources": [
+    {
+      "reason": "CC-BY-NC-SA-4.0 eval rows are score-and-cite only; do not redistribute or use for commercial training",
+      "source": "afrispeech-200"
+    },
+    {
+      "reason": "governance permits current deposits 10283/8983 only",
+      "source": "EdACC withdrawn deposit 4836"
+    }
+  ],
+  "do_not_train_manifest_hashes": {
+    "count": 353,
+    "reason": "current benchmark/eval audio is score-and-cite or otherwise manifest-frozen",
+    "sources": [
+      "afrispeech-200"
+    ]
+  },
+  "governing_metric": "worst-group WER and min-max parity gap",
+  "manifest_summary": {
+    "licenses": [
+      "CC-BY-NC-SA-4.0"
+    ],
+    "manifest": "benchmark/manifest.csv",
+    "redistributable_values": [
+      "no"
+    ],
+    "rows": 353,
+    "sources": [
+      "afrispeech-200"
+    ],
+    "summary": "353 manifest rows; licenses=['CC-BY-NC-SA-4.0']; redistributable=['no']; score-and-cite only when redistributable includes 'no'"
+  },
+  "plan_id": "wave4_acquisition_plan_2026_07_08",
+  "pre_compute_gates": [
+    "all target rows ledgered with source_id, audio_hash, speaker_hash, split, and license_url",
+    "babel audit archive/ledger.sqlite passes",
+    "babel split-leaks archive/ledger.sqlite returns empty",
+    "babel worst-cell-plan shows nonzero training hours for selected groups",
+    "no target audio hash appears in benchmark/manifest.csv"
+  ],
+  "schedule_receipt": "benchmark/receipts/wave3_group_dro_schedule_2026_07_08.json",
+  "status": "plan_only_no_download_or_training",
+  "targets": [
+    {
+      "accent_family": "luganda",
+      "allowed_sources": [
+        "EdACC current deposits 10283/8983",
+        "SLR70",
+        "speechocean762"
+      ],
+      "current_group_wer": 8.5625,
+      "current_train_hours": 0.0,
+      "hours_to_acquire": 10.0,
+      "license_gate": "manual license text review before ledger-upsert; reject non-commercial, no-derivatives, or missing attribution",
+      "minimum_new_eval_clips": 0,
+      "provenance_gate": {
+        "must_not_match_manifest_audio_hashes": true,
+        "required_clip_fields": [
+          "clip_id",
+          "source_id",
+          "source_url",
+          "source_type",
+          "license_name",
+          "license_url",
+          "attribution",
+          "audio_hash",
+          "speaker_hash",
+          "accent_family",
+          "split"
+        ],
+        "required_flags": {
+          "pii_status": "reviewed_or_clean",
+          "redistribution_allowed": 1,
+          "training_allowed": 1
+        },
+        "split_rule": "run babel assign-splits after source_id/speaker_hash/audio_hash are populated"
+      },
+      "rank": 1,
+      "sampler_weight": 4.0,
+      "target_train_hours": 10.0
+    },
+    {
+      "accent_family": "igbo",
+      "allowed_sources": [
+        "EdACC current deposits 10283/8983",
+        "SLR70",
+        "speechocean762"
+      ],
+      "current_group_wer": 7.0517,
+      "current_train_hours": 0.0,
+      "hours_to_acquire": 10.0,
+      "license_gate": "manual license text review before ledger-upsert; reject non-commercial, no-derivatives, or missing attribution",
+      "minimum_new_eval_clips": 0,
+      "provenance_gate": {
+        "must_not_match_manifest_audio_hashes": true,
+        "required_clip_fields": [
+          "clip_id",
+          "source_id",
+          "source_url",
+          "source_type",
+          "license_name",
+          "license_url",
+          "attribution",
+          "audio_hash",
+          "speaker_hash",
+          "accent_family",
+          "split"
+        ],
+        "required_flags": {
+          "pii_status": "reviewed_or_clean",
+          "redistribution_allowed": 1,
+          "training_allowed": 1
+        },
+        "split_rule": "run babel assign-splits after source_id/speaker_hash/audio_hash are populated"
+      },
+      "rank": 2,
+      "sampler_weight": 3.613981,
+      "target_train_hours": 10.0
+    },
+    {
+      "accent_family": "igala",
+      "allowed_sources": [
+        "EdACC current deposits 10283/8983",
+        "SLR70",
+        "speechocean762"
+      ],
+      "current_group_wer": 6.8938,
+      "current_train_hours": 0.0,
+      "hours_to_acquire": 10.0,
+      "license_gate": "manual license text review before ledger-upsert; reject non-commercial, no-derivatives, or missing attribution",
+      "minimum_new_eval_clips": 0,
+      "provenance_gate": {
+        "must_not_match_manifest_audio_hashes": true,
+        "required_clip_fields": [
+          "clip_id",
+          "source_id",
+          "source_url",
+          "source_type",
+          "license_name",
+          "license_url",
+          "attribution",
+          "audio_hash",
+          "speaker_hash",
+          "accent_family",
+          "split"
+        ],
+        "required_flags": {
+          "pii_status": "reviewed_or_clean",
+          "redistribution_allowed": 1,
+          "training_allowed": 1
+        },
+        "split_rule": "run babel assign-splits after source_id/speaker_hash/audio_hash are populated"
+      },
+      "rank": 3,
+      "sampler_weight": 3.573637,
+      "target_train_hours": 10.0
+    },
+    {
+      "accent_family": "ekpeye",
+      "allowed_sources": [
+        "EdACC current deposits 10283/8983",
+        "SLR70",
+        "speechocean762"
+      ],
+      "current_group_wer": 5.8601,
+      "current_train_hours": 0.0,
+      "hours_to_acquire": 10.0,
+      "license_gate": "manual license text review before ledger-upsert; reject non-commercial, no-derivatives, or missing attribution",
+      "minimum_new_eval_clips": 0,
+      "provenance_gate": {
+        "must_not_match_manifest_audio_hashes": true,
+        "required_clip_fields": [
+          "clip_id",
+          "source_id",
+          "source_url",
+          "source_type",
+          "license_name",
+          "license_url",
+          "attribution",
+          "audio_hash",
+          "speaker_hash",
+          "accent_family",
+          "split"
+        ],
+        "required_flags": {
+          "pii_status": "reviewed_or_clean",
+          "redistribution_allowed": 1,
+          "training_allowed": 1
+        },
+        "split_rule": "run babel assign-splits after source_id/speaker_hash/audio_hash are populated"
+      },
+      "rank": 4,
+      "sampler_weight": 3.30952,
+      "target_train_hours": 10.0
+    },
+    {
+      "accent_family": "igbo and yoruba",
+      "allowed_sources": [
+        "EdACC current deposits 10283/8983",
+        "SLR70",
+        "speechocean762"
+      ],
+      "current_group_wer": 4.1827,
+      "current_train_hours": 0.0,
+      "hours_to_acquire": 10.0,
+      "license_gate": "manual license text review before ledger-upsert; reject non-commercial, no-derivatives, or missing attribution",
+      "minimum_new_eval_clips": 0,
+      "provenance_gate": {
+        "must_not_match_manifest_audio_hashes": true,
+        "required_clip_fields": [
+          "clip_id",
+          "source_id",
+          "source_url",
+          "source_type",
+          "license_name",
+          "license_url",
+          "attribution",
+          "audio_hash",
+          "speaker_hash",
+          "accent_family",
+          "split"
+        ],
+        "required_flags": {
+          "pii_status": "reviewed_or_clean",
+          "redistribution_allowed": 1,
+          "training_allowed": 1
+        },
+        "split_rule": "run babel assign-splits after source_id/speaker_hash/audio_hash are populated"
+      },
+      "rank": 5,
+      "sampler_weight": 2.880934,
+      "target_train_hours": 10.0
+    },
+    {
+      "accent_family": "swahili",
+      "allowed_sources": [
+        "EdACC current deposits 10283/8983",
+        "SLR70",
+        "speechocean762"
+      ],
+      "current_group_wer": 3.9048,
+      "current_train_hours": 0.0,
+      "hours_to_acquire": 10.0,
+      "license_gate": "manual license text review before ledger-upsert; reject non-commercial, no-derivatives, or missing attribution",
+      "minimum_new_eval_clips": 0,
+      "provenance_gate": {
+        "must_not_match_manifest_audio_hashes": true,
+        "required_clip_fields": [
+          "clip_id",
+          "source_id",
+          "source_url",
+          "source_type",
+          "license_name",
+          "license_url",
+          "attribution",
+          "audio_hash",
+          "speaker_hash",
+          "accent_family",
+          "split"
+        ],
+        "required_flags": {
+          "pii_status": "reviewed_or_clean",
+          "redistribution_allowed": 1,
+          "training_allowed": 1
+        },
+        "split_rule": "run babel assign-splits after source_id/speaker_hash/audio_hash are populated"
+      },
+      "rank": 6,
+      "sampler_weight": 2.809929,
+      "target_train_hours": 10.0
+    },
+    {
+      "accent_family": "yoruba",
+      "allowed_sources": [
+        "EdACC current deposits 10283/8983",
+        "SLR70",
+        "speechocean762"
+      ],
+      "current_group_wer": 3.5133,
+      "current_train_hours": 0.0,
+      "hours_to_acquire": 10.0,
+      "license_gate": "manual license text review before ledger-upsert; reject non-commercial, no-derivatives, or missing attribution",
+      "minimum_new_eval_clips": 0,
+      "provenance_gate": {
+        "must_not_match_manifest_audio_hashes": true,
+        "required_clip_fields": [
+          "clip_id",
+          "source_id",
+          "source_url",
+          "source_type",
+          "license_name",
+          "license_url",
+          "attribution",
+          "audio_hash",
+          "speaker_hash",
+          "accent_family",
+          "split"
+        ],
+        "required_flags": {
+          "pii_status": "reviewed_or_clean",
+          "redistribution_allowed": 1,
+          "training_allowed": 1
+        },
+        "split_rule": "run babel assign-splits after source_id/speaker_hash/audio_hash are populated"
+      },
+      "rank": 7,
+      "sampler_weight": 2.709898,
+      "target_train_hours": 10.0
+    },
+    {
+      "accent_family": "ikwere",
+      "allowed_sources": [
+        "EdACC current deposits 10283/8983",
+        "SLR70",
+        "speechocean762"
+      ],
+      "current_group_wer": 2.9803,
+      "current_train_hours": 0.0,
+      "hours_to_acquire": 10.0,
+      "license_gate": "manual license text review before ledger-upsert; reject non-commercial, no-derivatives, or missing attribution",
+      "minimum_new_eval_clips": 0,
+      "provenance_gate": {
+        "must_not_match_manifest_audio_hashes": true,
+        "required_clip_fields": [
+          "clip_id",
+          "source_id",
+          "source_url",
+          "source_type",
+          "license_name",
+          "license_url",
+          "attribution",
+          "audio_hash",
+          "speaker_hash",
+          "accent_family",
+          "split"
+        ],
+        "required_flags": {
+          "pii_status": "reviewed_or_clean",
+          "redistribution_allowed": 1,
+          "training_allowed": 1
+        },
+        "split_rule": "run babel assign-splits after source_id/speaker_hash/audio_hash are populated"
+      },
+      "rank": 8,
+      "sampler_weight": 2.573714,
+      "target_train_hours": 10.0
+    }
+  ]
+}

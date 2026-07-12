@@ -1,0 +1,43 @@
+{
+  "accepted": 1,
+  "accepted_hours_by_accent_family": {
+    "luganda": 0.016667
+  },
+  "acquisition_plan_receipt": "benchmark/receipts/wave4_acquisition_plan_2026_07_08.json",
+  "checked": 2,
+  "failures": [
+    "source is blocked by acquisition plan",
+    "source is not in acquisition plan allowed_sources",
+    "license is not training/redistribution eligible",
+    "redistribution_allowed must be 1",
+    "audio_hash matches frozen benchmark manifest"
+  ],
+  "governing_metric": "worst-group WER and min-max parity gap",
+  "manifest_csv": "benchmark/manifest.csv",
+  "manifest_hashes_checked": 353,
+  "passed": false,
+  "receipt_id": "wave5_acquisition_intake_gate_2026_07_08",
+  "rejected": 1,
+  "results": [
+    {
+      "accent_family": "luganda",
+      "clip_id": "wave5_intake_luganda_edacc_fixture",
+      "duration_s": 60.0,
+      "failures": [],
+      "passed": true
+    },
+    {
+      "accent_family": "luganda",
+      "clip_id": "wave5_reject_afrispeech_eval_hash_fixture",
+      "duration_s": 60.0,
+      "failures": [
+        "source is blocked by acquisition plan",
+        "source is not in acquisition plan allowed_sources",
+        "license is not training/redistribution eligible",
+        "redistribution_allowed must be 1",
+        "audio_hash matches frozen benchmark manifest"
+      ],
+      "passed": false
+    }
+  ]
+}

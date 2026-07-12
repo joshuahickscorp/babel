@@ -1,0 +1,29 @@
+{
+  "component": "segmentation_contract",
+  "data": "{\"commit\": \"510b24f6be095fc5c6dffcde7f764486c8ce5d7e\", \"contract_metric_key\": \"metrics_json.boundary_f1\", \"exact_command\": \".venv/bin/babel eval-segmentation eval/segmentation_eval.jsonl\", \"failure_example\": {\"accent_family\": \"british_isles\", \"hypothesis\": \"i went home are you ok\", \"reference\": \"I went home. Are you OK?\", \"score\": 0.0}, \"license_summary\": {\"summary\": \"text-only synthetic fixture; no licensed audio; not release evidence\"}, \"per_group_table_key\": \"metrics_json.by_accent_family\", \"split\": \"eval/segmentation_eval.jsonl text fixture contract seed\", \"workspace_dirty_at_recording\": true}",
+  "decision": "record_as_contract_evidence",
+  "experiment_id": "wave1_segmentation_contract_seed_2026_07_08",
+  "hypothesis": "Sentence boundary, casing, punctuation, and code-switch restoration must be scored separately from ASR WER before repair claims are allowed.",
+  "metrics_json": {
+    "best_group": "clean_us",
+    "best_group_boundary_f1": 1.0,
+    "boundary_f1": 0.42857142857142855,
+    "by_accent_family": {
+      "aave": 0.0,
+      "african": 0.6666666666666666,
+      "british_isles": 0.0,
+      "clean_us": 1.0,
+      "south_asian": 0.0,
+      "us_spanish": 0.0
+    },
+    "casing_accuracy": 0.7,
+    "code_switch_boundary_f1": 0.6666666666666666,
+    "metric_scope": "segmentation_contract_seed_not_asr_wer",
+    "parity_gap": 1.0,
+    "punctuation_accuracy": 0.7333333333333333,
+    "utterances": 6,
+    "worst_group": "british_isles",
+    "worst_group_boundary_f1": 0.0
+  },
+  "notes": "Contract evidence only: validates boundary/case/punctuation proof loop and must not be reported as ASR WER or model improvement."
+}

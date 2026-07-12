@@ -1,0 +1,45 @@
+{
+  "component": "stage_b_repair",
+  "created_at": "2026-07-08T08:10:00-04:00",
+  "data": "{\"commit\": \"510b24f6be095fc5c6dffcde7f764486c8ce5d7e\", \"exact_command\": \".venv/bin/babel eval-repair eval/repair_eval.jsonl\", \"failure_example\": {\"accent_family\": \"british_isles\", \"actual_decision\": \"answer\", \"expected_decision\": \"clarify\", \"hypothesis_clean\": \"Meet at the riverside bank at noon.\", \"reference_clean\": \"I think she said meet at the bank.\", \"unsupported_claims\": [\"riverside\", \"noon\"], \"wer\": 0.875}, \"license_summary\": {\"summary\": \"Text-only synthetic/illustrative repair eval seed; no licensed audio distributed.\"}, \"per_group_table_key\": \"metrics_json.clean_by_group\", \"release_gate_decision\": {\"failures\": [\"synthetic seed only\", \"clarify_recall below 1.0\", \"hallucination_rate above 0.0\"], \"passed\": false}, \"split\": \"synthetic repair seed eval; no held-out audio; not release-eligible\", \"workspace_dirty_at_recording\": true}",
+  "decision": "keep_as_seed_gate_not_release",
+  "experiment_id": "wave0_stage_b_repair_seed_2026_07_08",
+  "hypothesis": "Stage B repair scoring must expose faithfulness and clarification failures before any repair model training.",
+  "metrics_json": {
+    "by_accent_family": {
+      "aave": 0.25,
+      "african": 0.0,
+      "british_isles": 0.875,
+      "caribbean": 0.0,
+      "clean_us": 0.0,
+      "south_asian": 0.14285714285714285,
+      "us_southern": 0.0,
+      "us_spanish": 0.0
+    },
+    "clarify_precision": 1.0,
+    "clarify_recall": 0.5,
+    "clean_by_group": {
+      "aave": 0.25,
+      "african": 0.0,
+      "british_isles": 0.875,
+      "caribbean": 0.0,
+      "clean_us": 0.0,
+      "south_asian": 0.14285714285714285,
+      "us_southern": 0.0,
+      "us_spanish": 0.0
+    },
+    "clean_parity": {
+      "best": "us_spanish",
+      "gap": 0.875,
+      "worst": "british_isles"
+    },
+    "clean_wer": 0.225,
+    "decision_accuracy": 0.875,
+    "hallucination_rate": 0.125,
+    "parity_gap": 0.875,
+    "release_gate_passed": false,
+    "utterances": 8,
+    "worst_group_wer": 0.875
+  },
+  "notes": "Closes repair scoring receipt; worst repair group is british_isles at clean WER 0.875, with a planted unsupported-claim failure."
+}
